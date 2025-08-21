@@ -1,5 +1,6 @@
+
 pipeline{
-agent any{
+agent any
 
    stages{
      stage('Build Jar'){
@@ -18,5 +19,5 @@ agent any{
      }
      }
    }
-}
+
 }
