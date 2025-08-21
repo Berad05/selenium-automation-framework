@@ -15,7 +15,7 @@ agent any
      }
      stage('Push Image'){
      steps{
-     bat "docker push vsb/selenium-docker ."
+     bat "docker push vsb/selenium-docker"
      }
      }
    }
