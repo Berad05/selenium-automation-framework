@@ -14,10 +14,22 @@ agent any
       }
      }
      stage('Push Image'){
+      environment {
+                     DOCKER_HUB = credentials('docker-hub-credential')
+                 }
+
      steps{
+     bat 'echo ${DOCKER_HUB_PSW} | docker login -u ${DOCKER_HUB_USR} --password-stdin'
      bat "docker push vsb/selenium-docker"
      }
      }
    }
+   post{
 
+    always{
+    bat "docker logout"
+    }
+
+   }
 }
+
